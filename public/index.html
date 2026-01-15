@@ -101,12 +101,26 @@
           <h2>연락</h2>
           <div class="card">
             <p class="contact-line">
-              이메일:
-              <a class="mono" href="mailto:jangwoo.jeon@yourdomain.com">jangwoo.jeon@yourdomain.com</a>
-              <span class="muted">(도메인만 바꾸면 바로 사용 가능)</span>
+              공개 이메일 대신 폼으로 연락을 받습니다. 아래 버튼을 눌러 메시지를 남겨주세요.
             </p>
 
-            <form class="form" onsubmit="return false;">
+            <div class="contact-actions">
+              <button class="button primary" id="contactToggle" type="button" aria-expanded="false" aria-controls="contactForm">
+                Contact
+              </button>
+              <span class="muted">스팸 방지를 위해 Turnstile 추가 가능</span>
+            </div>
+
+            <form class="form is-hidden" id="contactForm" onsubmit="return false;" data-recipient="amFja2plb242QGdtYWlsLmNvbQ==">
+              <input type="hidden" name="recipient" value="amFja2plb242QGdtYWlsLmNvbQ==" />
+              <label>
+                <span>이름</span>
+                <input id="name" type="text" autocomplete="name" placeholder="성함 또는 닉네임" />
+              </label>
+              <label>
+                <span>답장 받을 이메일</span>
+                <input id="email" type="email" autocomplete="email" placeholder="example@email.com" />
+              </label>
               <label>
                 <span>메시지(로컬 데모)</span>
                 <textarea id="message" rows="5" placeholder="여기에 메시지를 입력하세요. (현재는 저장/전송 없이 데모만)"></textarea>
@@ -116,7 +130,8 @@
             </form>
 
             <div class="note">
-              실제 문의 폼 전송까지 만들려면 Cloudflare Workers로 /api 엔드포인트를 붙이면 된다.
+              실제 전송은 Cloudflare Workers /api/contact 엔드포인트에 연결하고, 수신 이메일은
+              Workers 환경 변수로 설정하면 된다.
             </div>
           </div>
         </section>

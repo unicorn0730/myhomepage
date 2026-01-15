@@ -168,6 +168,7 @@ a[href=""]{ opacity:.55; pointer-events:none; text-decoration:none; }
 
 .form{ margin-top: 14px; display:grid; gap: 10px; }
 label span{ display:block; margin-bottom: 8px; color: var(--muted); font-size: 13px; }
+input,
 textarea{
   width:100%;
   border-radius: 14px;
@@ -178,12 +179,22 @@ textarea{
   resize: vertical;
   outline: none;
 }
+input:focus,
 textarea:focus{ border-color: rgba(0,212,255,.45); }
+input{ height: 44px; }
 
 .contact-line{ margin:0; line-height: 1.7; }
+.contact-actions{
+  margin-top: 12px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
 .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 .muted{ color: var(--muted); }
 .hint{ min-height: 18px; color: var(--muted); font-size: 13px; }
+.is-hidden{ display:none; }
 
 .footer{
   margin-top: 28px;
