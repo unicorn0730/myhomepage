@@ -5,119 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>전장우 | Personal Site</title>
-    <meta name="description" content="전장우의 개인 홈페이지. 소개, 관심사, 링크, 연락처." />
+    <meta name="description" content="전장우의 개인 홈페이지. 포트폴리오, 갤러리, 서비스 소개." />
 
-    <!-- Open Graph (공유용) -->
     <meta property="og:title" content="전장우 | Personal Site" />
-    <meta property="og:description" content="전장우의 개인 홈페이지. 소개, 관심사, 링크, 연락처." />
+    <meta property="og:description" content="전장우의 개인 홈페이지. 포트폴리오, 갤러리, 서비스 소개." />
     <meta property="og:type" content="website" />
 
-    <link rel="icon" href="data:,">
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./script.js"></script>
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
+    <div class="page" id="top">
+      <header class="topbar">
         <div class="brand">
           <div class="avatar" aria-hidden="true">JW</div>
           <div>
             <div class="name">전장우</div>
-            <div class="tagline">Personal site · Portfolio · Contact</div>
+            <div class="tagline" data-i18n="tagline">미니멀 · 뉴로모픽 · 개인 홈페이지</div>
           </div>
         </div>
 
-        <nav class="nav">
-          <a href="#about">소개</a>
-          <a href="#links">링크</a>
-          <a href="#contact">연락</a>
-        </nav>
+        <div class="controls">
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button class="pill" data-lang="ko" type="button">KR</button>
+            <button class="pill" data-lang="en" type="button">EN</button>
+          </div>
+          <button class="pill theme-toggle" id="themeToggle" type="button">
+            <span class="theme-icon" aria-hidden="true">☀️</span>
+            <span id="themeLabel">Light</span>
+          </button>
+        </div>
       </header>
 
       <main>
-        <section class="hero">
-          <h1>안녕하세요, 전장우입니다.</h1>
-          <p class="lead">
-            이 페이지는 간단한 자기소개와 링크, 연락처를 위한 개인 홈페이지입니다.
-            필요에 따라 포트폴리오/블로그로 확장할 수 있습니다.
-          </p>
-
-          <div class="cta-row">
-            <a class="button primary" href="#contact">연락하기</a>
-            <a class="button" href="#links">링크 보기</a>
-          </div>
-
-          <div class="meta">
-            <div class="chip">Hosted on Cloudflare Pages</div>
-            <div class="chip">Static · Fast · Global CDN</div>
-          </div>
-        </section>
-
-        <section id="about" class="section">
-          <h2>소개</h2>
-          <div class="card">
-            <p>
-              저는 전장우이며, 개인 프로젝트와 학업/관심사를 정리하고 공유하기 위해 이 사이트를 운영합니다.
-              이 문단은 원하는 내용으로 자유롭게 수정하면 됩니다.
+        <section class="hero neu-card">
+          <div class="hero-text">
+            <h1 data-i18n="heroTitle">안녕하세요, 전장우입니다.</h1>
+            <p data-i18n="heroSubtitle">
+              포트폴리오와 갤러리, 서비스 소개를 정리할 공간입니다.
             </p>
-
-            <ul class="bullets">
-              <li>관심사: (예: 공학, 소프트웨어, 데이터, 투자, 사진 등)</li>
-              <li>진행 중인 것: (예: 프로젝트, 공부, 연구 등)</li>
-              <li>연락 선호: 이메일</li>
-            </ul>
-
-            <div class="note">
-              팁: 이 섹션을 프로젝트 카드(프로젝트명/설명/링크)로 확장하면 포트폴리오가 된다.
+            <div class="hero-actions">
+              <button class="pill primary" type="button" data-i18n="heroPrimary">문의하기</button>
+              <button class="pill" type="button" data-i18n="heroSecondary">포트폴리오 보기</button>
+            </div>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span class="meta-label" data-i18n="metaFocusLabel">포커스</span>
+              <span class="meta-value" data-i18n="metaFocusValue">브랜드/제품 경험 설계</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label" data-i18n="metaLocationLabel">기반</span>
+              <span class="meta-value" data-i18n="metaLocationValue">Seoul · Remote</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label" data-i18n="metaStatusLabel">상태</span>
+              <span class="meta-value" data-i18n="metaStatusValue">프로젝트 상담 가능</span>
             </div>
           </div>
         </section>
 
-        <section id="links" class="section">
-          <h2>링크</h2>
-          <div class="grid">
-            <div class="card">
-              <div class="card-title">YouTube</div>
-              <p class="card-desc">제 유튜브 채널입니다.</p>
-              <a class="card-link" href="https://www.youtube.com/@you_ni_corn__">채널 방문</a>
+        <section class="tabs">
+          <div class="tab-list" role="tablist" aria-label="Content Tabs">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="portfolio" data-i18n="tabPortfolio">
+              My portfolio
+            </button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="gallery" data-i18n="tabGallery">
+              My gallery
+            </button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="products" data-i18n="tabProducts">
+              Products
+            </button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="services" data-i18n="tabServices">
+              Services
+            </button>
+          </div>
+
+          <div class="tab-panels">
+            <div class="tab-panel active" data-panel="portfolio" role="tabpanel">
+              <div class="panel-grid">
+                <div class="neu-card">
+                  <h3 data-i18n="portfolioCard1Title">대표 프로젝트</h3>
+                  <p data-i18n="portfolioCard1Desc">프로젝트 요약 및 성과 지표를 여기에 배치하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+                <div class="neu-card">
+                  <h3 data-i18n="portfolioCard2Title">케이스 스터디</h3>
+                  <p data-i18n="portfolioCard2Desc">문제 정의, 접근 방식, 결과를 간결하게 소개하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+              </div>
             </div>
 
-            <div class="card">
-              <div class="card-title">GitHub</div>
-              <p class="card-desc">프로젝트/코드를 올려두는 곳(원하면 링크 추가).</p>
-              <a class="card-link" href="#" data-placeholder="true">링크 추가 예정</a>
+            <div class="tab-panel" data-panel="gallery" role="tabpanel">
+              <div class="panel-grid">
+                <div class="neu-card">
+                  <h3 data-i18n="galleryCard1Title">이미지 컬렉션</h3>
+                  <p data-i18n="galleryCard1Desc">작업물 이미지 또는 촬영 사진을 추가할 섹션입니다.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+                <div class="neu-card">
+                  <h3 data-i18n="galleryCard2Title">비하인드 씬</h3>
+                  <p data-i18n="galleryCard2Desc">프로세스, 스케치, 영감을 담는 공간으로 활용하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+              </div>
             </div>
 
-            <div class="card">
-              <div class="card-title">Blog / Notes</div>
-              <p class="card-desc">정리 글(원하면 링크 추가).</p>
-              <a class="card-link" href="#" data-placeholder="true">링크 추가 예정</a>
+            <div class="tab-panel" data-panel="products" role="tabpanel">
+              <div class="panel-grid">
+                <div class="neu-card">
+                  <h3 data-i18n="productsCard1Title">제품 라인업</h3>
+                  <p data-i18n="productsCard1Desc">제품의 핵심 가치와 특징을 짧게 소개하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+                <div class="neu-card">
+                  <h3 data-i18n="productsCard2Title">출시 예정</h3>
+                  <p data-i18n="productsCard2Desc">다가오는 업데이트나 신제품 정보를 배치하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-panel="services" role="tabpanel">
+              <div class="panel-grid">
+                <div class="neu-card">
+                  <h3 data-i18n="servicesCard1Title">제공 서비스</h3>
+                  <p data-i18n="servicesCard1Desc">컨설팅, 디자인, 개발 등 제공 가능한 서비스를 정리하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+                <div class="neu-card">
+                  <h3 data-i18n="servicesCard2Title">협업 방식</h3>
+                  <p data-i18n="servicesCard2Desc">프로젝트 진행 흐름이나 일정 예시를 추가하세요.</p>
+                  <span class="badge" data-i18n="placeholder">준비 중</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="contact" class="section">
-          <h2>연락</h2>
-          <div class="card">
-            <p class="contact-line">
-              이메일:
-              <a class="mono" href="mailto:jangwoo.jeon@yourdomain.com">jangwoo.jeon@yourdomain.com</a>
-              <span class="muted">(도메인만 바꾸면 바로 사용 가능)</span>
-            </p>
-
-            <form class="form" onsubmit="return false;">
-              <label>
-                <span>메시지(로컬 데모)</span>
-                <textarea id="message" rows="5" placeholder="여기에 메시지를 입력하세요. (현재는 저장/전송 없이 데모만)"></textarea>
-              </label>
-              <button class="button primary" id="copyBtn" type="button">메시지 복사</button>
-              <div class="hint" id="hint" aria-live="polite"></div>
-            </form>
-
-            <div class="note">
-              실제 문의 폼 전송까지 만들려면 Cloudflare Workers로 /api 엔드포인트를 붙이면 된다.
-            </div>
+        <section class="contact neu-card">
+          <h2 data-i18n="contactTitle">연락</h2>
+          <p data-i18n="contactDesc">프로젝트 문의나 협업 제안은 이메일로 보내 주세요.</p>
+          <div class="contact-actions">
+            <a class="pill primary" href="mailto:jangwoo.jeon@yourdomain.com" data-i18n="contactButton">이메일 보내기</a>
+            <span class="muted" data-i18n="contactNote">도메인만 변경하면 바로 사용 가능합니다.</span>
           </div>
         </section>
       </main>
@@ -125,7 +159,7 @@
       <footer class="footer">
         <span>© <span id="year"></span> Jangwoo Jeon</span>
         <span class="dot">·</span>
-        <a href="#top" class="muted">맨 위로</a>
+        <a href="#top" class="muted" data-i18n="backToTop">맨 위로</a>
       </footer>
     </div>
   </body>
