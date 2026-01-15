@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>전장우 | Personal Site</title>
+    <meta name="description" content="전장우의 개인 홈페이지. 소개, 관심사, 링크, 연락처." />
+
+    <!-- Open Graph (공유용) -->
+    <meta property="og:title" content="전장우 | Personal Site" />
+    <meta property="og:description" content="전장우의 개인 홈페이지. 소개, 관심사, 링크, 연락처." />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <div class="avatar" aria-hidden="true">JW</div>
+          <div>
+            <div class="name">전장우</div>
+            <div class="tagline">Personal site · Portfolio · Contact</div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="#about">소개</a>
+          <a href="#links">링크</a>
+          <a href="#contact">연락</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>안녕하세요, 전장우입니다.</h1>
+          <p class="lead">
+            이 페이지는 간단한 자기소개와 링크, 연락처를 위한 개인 홈페이지입니다.
+            필요에 따라 포트폴리오/블로그로 확장할 수 있습니다.
+          </p>
+
+          <div class="cta-row">
+            <a class="button primary" href="#contact">연락하기</a>
+            <a class="button" href="#links">링크 보기</a>
+          </div>
+
+          <div class="meta">
+            <div class="chip">Hosted on Cloudflare Pages</div>
+            <div class="chip">Static · Fast · Global CDN</div>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <h2>소개</h2>
+          <div class="card">
+            <p>
+              저는 전장우이며, 개인 프로젝트와 학업/관심사를 정리하고 공유하기 위해 이 사이트를 운영합니다.
+              이 문단은 원하는 내용으로 자유롭게 수정하면 됩니다.
+            </p>
+
+            <ul class="bullets">
+              <li>관심사: (예: 공학, 소프트웨어, 데이터, 투자, 사진 등)</li>
+              <li>진행 중인 것: (예: 프로젝트, 공부, 연구 등)</li>
+              <li>연락 선호: 이메일</li>
+            </ul>
+
+            <div class="note">
+              팁: 이 섹션을 프로젝트 카드(프로젝트명/설명/링크)로 확장하면 포트폴리오가 된다.
+            </div>
+          </div>
+        </section>
+
+        <section id="links" class="section">
+          <h2>링크</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="card-title">YouTube</div>
+              <p class="card-desc">채널 링크는 비워둔 placeholder 상태입니다.</p>
+              <a class="card-link" href="" aria-disabled="true">채널 링크 추가 예정</a>
+            </div>
+
+            <div class="card">
+              <div class="card-title">GitHub</div>
+              <p class="card-desc">프로젝트/코드를 올려두는 곳(원하면 링크 추가).</p>
+              <a class="card-link" href="#" data-placeholder="true">링크 추가 예정</a>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Blog / Notes</div>
+              <p class="card-desc">정리 글(원하면 링크 추가).</p>
+              <a class="card-link" href="#" data-placeholder="true">링크 추가 예정</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <h2>연락</h2>
+          <div class="card">
+            <p class="contact-line">
+              이메일:
+              <a class="mono" href="mailto:jangwoo.jeon@yourdomain.com">jangwoo.jeon@yourdomain.com</a>
+              <span class="muted">(도메인만 바꾸면 바로 사용 가능)</span>
+            </p>
+
+            <form class="form" onsubmit="return false;">
+              <label>
+                <span>메시지(로컬 데모)</span>
+                <textarea id="message" rows="5" placeholder="여기에 메시지를 입력하세요. (현재는 저장/전송 없이 데모만)"></textarea>
+              </label>
+              <button class="button primary" id="copyBtn" type="button">메시지 복사</button>
+              <div class="hint" id="hint" aria-live="polite"></div>
+            </form>
+
+            <div class="note">
+              실제 문의 폼 전송까지 만들려면 Cloudflare Workers로 /api 엔드포인트를 붙이면 된다.
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Jangwoo Jeon</span>
+        <span class="dot">·</span>
+        <a href="#top" class="muted">맨 위로</a>
+      </footer>
+    </div>
+  </body>
+</html>
